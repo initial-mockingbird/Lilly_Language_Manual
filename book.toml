@@ -1,0 +1,7 @@
+[book]
+authors = ["initial-mockingbird"]
+language = "en"
+src = "src"
+title = "The Lilly Manual"
+[output.html]
+mathjax-support = true
