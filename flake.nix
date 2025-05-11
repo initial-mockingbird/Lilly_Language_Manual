@@ -18,7 +18,7 @@
           nativeBuildInputs =
             [ pkgs.mdbook
               pkgs.just
-
+              pkgs.zip
             ];
         };
       };

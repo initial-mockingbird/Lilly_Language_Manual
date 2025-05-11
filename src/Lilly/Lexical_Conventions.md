@@ -25,18 +25,18 @@ Blanks are ignored and only used to separate tokens and instructions.
 \textit{letter} &&::=
     &&\quad (    \texttt{a..z} \\\\
     && &&\quad \mid \texttt{A..Z} \\\\
-    && &&\quad \mid U+00DF .. U+00F6 \\\\
-    && &&\quad \mid U+00F8 .. U+00FF \\\\
-    && &&\quad \mid U+0153 \\\\
-    && &&\quad \mid U+0161 \\\\
-    && &&\quad \mid U+017E \\\\
-    && &&\quad \mid U+00C0 ... U00D6 \\\\
-    && &&\quad \mid U+00D8 ... U+00DE \\\\
-    && &&\quad \mid U+0152 \\\\
-    && &&\quad \mid U+0160 \\\\
-    && &&\quad \mid U+017D \\\\
-    && &&\quad \mid U+0178 \\\\
-    && &&\quad \mid U+1E9E \\\\
+    && &&\quad \mid \texttt{U+00DF ... U+00F6} \\\\
+    && &&\quad \mid \texttt{U+00F8 ... U+00FF} \\\\
+    && &&\quad \mid \texttt{U+0153} \\\\
+    && &&\quad \mid \texttt{U+0161} \\\\
+    && &&\quad \mid \texttt{U+017E} \\\\
+    && &&\quad \mid \texttt{U+00C0 ... U00D6} \\\\
+    && &&\quad \mid \texttt{U+00D8 ... U+00DE} \\\\
+    && &&\quad \mid \texttt{U+0152} \\\\
+    && &&\quad \mid \texttt{U+0160} \\\\
+    && &&\quad \mid \texttt{U+017D} \\\\
+    && &&\quad \mid \texttt{U+0178} \\\\
+    && &&\quad \mid \texttt{U+1E9E} \\\\
     && &&\quad ) \\\\
 \textit{digit}  &&::= && \quad \texttt{0..9} \\\\
 \end{alignat*}
@@ -64,3 +64,32 @@ Identifier length is unspecified and depends on the implementation.
 
 Currently, Zilly only supports integer literals. They are sequences of digits which can
 either be signed or not.
+
+## Keywords
+
+The identifiers below are reserved keywords and cannot be employed outside their contexts.
+
+\\[
+\begin{alignat*}{4}
+\texttt{formula} &&\quad \texttt{random} &&\quad \texttt{if} &&\quad \texttt{fn} &&\quad \texttt{\\(\lambda \\)} \\\\
+\texttt{lt} &&\quad \texttt{lazy} &&\quad \texttt{Z} &&\quad \texttt{sub} &&\quad \texttt{sys}\\\\
+\texttt{} &&\quad \texttt{} &&\quad \texttt{} &&\quad \texttt{} && \quad \texttt{} \\\\
+\end{alignat*}
+\\]
+
+The following symbols are also keywords:
+
+\\[
+\begin{alignat*}{4}
+\texttt{<} &&\quad \texttt{>} &&\quad \texttt{(} &&\quad \texttt{)} &&\quad \texttt{->} \\\\
+\texttt{=>} &&\quad \texttt{.} &&\quad \texttt{:=} &&\quad \texttt{;} &&\quad \texttt{,}\\\\
+\texttt{=} &&\quad \texttt{<=} &&\quad \texttt{>=} &&\quad \texttt{<>} && \quad \texttt{\*} \\\\
+\texttt{+} &&\quad \texttt{-} &&\quad \texttt{^} &&\quad \texttt{} && \quad \texttt{} \\\\
+\texttt{} &&\quad \texttt{} &&\quad \texttt{} &&\quad \texttt{} && \quad \texttt{} \\\\
+\end{alignat*}
+\\]
+
+## Ambiguities
+
+Lexical ambiguities are resolved by the "longest match" rule: when a character sequence can be decomposed into two tokens
+in several different ways, the decomposition retained is the one with the longest first token.
